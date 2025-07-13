@@ -1,29 +1,86 @@
-# Development
-Pasos para levantar la app en desarrollo
+# Todo App (Next.js 13/14 + Prisma + PostgreSQL)
 
+Aplicación web para la gestión de tareas (ToDo List) construida con Next.js (App Router), Prisma ORM y PostgreSQL. Permite crear, listar, completar y eliminar tareas de manera sencilla, con una interfaz moderna y responsiva.
 
-1. Levantar la base de datos
+## 🚀 Tecnologías principales
+- [Next.js 13/14](https://nextjs.org/) (App Router)
+- [React](https://react.dev/)
+- [Prisma ORM](https://www.prisma.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+## 📦 Estructura del proyecto
 ```
-docker compose up -d
+my-dashboar-dcn/
+├── app/                # Rutas y páginas Next.js
+├── components/         # Componentes reutilizables
+├── todos/              # Lógica y componentes de tareas
+├── prisma/             # Esquema y migraciones de Prisma
+├── lib/                # Utilidades y helpers
+├── styles/             # Estilos globales (Tailwind)
+├── public/             # Archivos estáticos
+└── ...
 ```
 
-2. Crear una copia de el .env.template y renombrarlo a .env
-3. Reemplazar las variables de entorno
-4. Ejecutar el comando ```npm install``` para reconstruir los módulos de node
-5. Ejecutar el comando ```npm run dev``` para ejecutar aplicación en desarrollo
-6. Ejecutar estos comandos de Prisma
-```
-7. Ejecutar el SEED para [crear la base de datos local](localhost:3000/api/seed)
+## ⚙️ Instalación y configuración
 
-# Prisma commnads
-```
-npx prisma init
-npx prisma migrate dev
-npx prisma generate
+1. **Clona el repositorio:**
+   ```bash
+   git clone <repo-url>
+   cd my-dashboar-dcn
+   ```
 
-```
+2. **Levanta la base de datos con Docker:**
+   ```bash
+   docker compose up -d
+   ```
 
-# Prod
+3. **Configura las variables de entorno:**
+   - Copia el archivo `.env.template` a `.env` y completa los valores necesarios (conexión a la base de datos, etc).
 
+4. **Instala las dependencias:**
+   ```bash
+   npm install
+   ```
 
-# Stage
+5. **Ejecuta las migraciones y genera el cliente Prisma:**
+   ```bash
+   npx prisma migrate dev
+   npx prisma generate
+   ```
+
+6. **(Opcional) Ejecuta el seed para poblar la base de datos:**
+   - Accede a [localhost:3000/api/seed](http://localhost:3000/api/seed) para crear datos de ejemplo.
+
+7. **Inicia la aplicación en desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+## 📝 Comandos útiles
+- `docker compose up -d` — Levanta la base de datos PostgreSQL en Docker
+- `npx prisma migrate dev` — Aplica migraciones de la base de datos
+- `npx prisma generate` — Genera el cliente Prisma
+- `npm run dev` — Inicia la app en modo desarrollo
+
+## 🌐 Uso
+- Accede a [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
+- Puedes crear, completar y eliminar tareas desde la interfaz.
+
+## 📁 Estructura de carpetas relevante
+- `app/` — Páginas y rutas Next.js
+- `todos/` — Componentes y lógica de tareas
+- `prisma/` — Esquema y migraciones de base de datos
+- `lib/` — Utilidades compartidas
+- `styles/` — Estilos globales (Tailwind)
+
+## 🤝 Contribuciones
+¡Las contribuciones son bienvenidas! Por favor, abre un issue o pull request para sugerir mejoras o reportar problemas.
+
+## 📝 Licencia
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+---
+
+**Desarrollado por [Tu Nombre o Usuario](https://github.com/erneledesma)**
